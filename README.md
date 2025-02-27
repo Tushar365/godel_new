@@ -1,37 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Godel Space
+
+A Next.js-based web application showcasing AI-powered geospatial insights.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm 9+
+
+### Installation
+
+1. Clone the repository to your local machine or fork it on Replit.
+
+2. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the development server with:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will be available at [http://localhost:3000](http://localhost:3000) or the URL provided by Replit.
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+Build the application for production:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Run Production Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After building, start the production server:
+```bash
+npm run start
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app` - Next.js App Router pages and layouts
+- `src/components` - React components
+- `public/` - Static assets
+- `convex/` - Convex backend functions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# godel_new
+## Deployment on Replit
+
+1. Open the Deployments tab by clicking the "Deploy" button in the header
+2. Select "Autoscale" deployment type
+3. Configure the deployment:
+   - Build command: `npm run build`
+   - Run command: `npm run start`
+4. Click "Deploy" to publish your application
+
+## Technologies Used
+
+- Next.js 15
+- React 19
+- Tailwind CSS 4
+- Convex for backend functions
