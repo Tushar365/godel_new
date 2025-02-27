@@ -12,7 +12,7 @@ const GodelSpaceFullPage = () => {
           <div className="md:w-1/2">
             <div className="bg-gray-900 p-4 rounded-lg">
               <img 
-                src="\src\image\Blog_Overview-Saudi-Arabia.gif" 
+                src="/Blog_Overview-Saudi-Arabia.gif" 
                 alt="Aerial view of port" 
                 className="w-full rounded"
               />
@@ -67,7 +67,7 @@ const GodelSpaceFullPage = () => {
           <div className="md:w-1/2">
             <div className="bg-gray-800 p-4 rounded-lg">
               <img 
-                src="\French_Riviera_node_full_image_2.jpg" 
+                src="/French_Riviera_node_full_image_2.jpg" 
                 alt="Satellite imagery of coastline" 
                 className="w-full rounded"
               />
@@ -82,7 +82,7 @@ const GodelSpaceFullPage = () => {
           <div className="md:w-1/2">
             <div className="bg-gray-900 p-4 rounded-lg">
               <img 
-                src="\src\image\GEO-2019-6144.jpg" 
+                src="/GEO-2019-6144.jpg" 
                 alt="Space debris visualization" 
                 className="w-full rounded"
               />
@@ -118,7 +118,7 @@ const GodelSpaceFullPage = () => {
           <div className="flex flex-wrap justify-center gap-8">
             <div className="w-32">
               <img 
-                src="\src\image\NVIDIA_Inception_Program_pillars.jpg" 
+                src="/NVIDIA_Inception_Program_pillars.jpg" 
                 alt="NVIDIA logo" 
                 className="w-full"
               />
