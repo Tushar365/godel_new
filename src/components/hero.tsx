@@ -17,6 +17,9 @@ const Hero = () => {
             muted
             playsInline
             className="w-full h-full object-cover opacity-100"
+            onError={(e) => {
+              console.error("Video failed to load:", e);
+            }}
           >
             Your browser does not support the video tag.
           </video>
