@@ -16,7 +16,7 @@ const Hero = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-100"
           >
             Your browser does not support the video tag.
           </video>
