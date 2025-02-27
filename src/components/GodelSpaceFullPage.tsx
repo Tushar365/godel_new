@@ -67,7 +67,7 @@ const GodelSpaceFullPage = () => {
           <div className="md:w-1/2">
             <div className="bg-gray-800 p-4 rounded-lg">
               <img 
-                src="\src\image\French_Riviera_node_full_image_2.jpg" 
+                src="\French_Riviera_node_full_image_2.jpg" 
                 alt="Satellite imagery of coastline" 
                 className="w-full rounded"
               />
