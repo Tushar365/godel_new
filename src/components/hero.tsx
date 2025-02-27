@@ -11,7 +11,7 @@ const Hero = () => {
         {/* Earth background video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
-            src="image/Earth_From_Space.mp4"
+            src="/Earth_From_Space.mp4"
             autoPlay
             loop
             muted
