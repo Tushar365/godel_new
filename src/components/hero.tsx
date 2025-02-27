@@ -20,7 +20,7 @@ const Hero = () => {
               console.error("Video failed to load:", e);
             }}
           >
-            <source src="public/Earth_From_Space.mp4" type="video/mp4" />
+            <source src="/Earth_From_Space.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
