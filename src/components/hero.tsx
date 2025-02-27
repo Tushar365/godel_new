@@ -11,12 +11,12 @@ const Hero = () => {
         {/* Earth background video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
-            src="/public/image/Earth_From_Space.mp4"
+            src="https://player.vimeo.com/external/328428416.sd.mp4?s=39df9f60fdeaeff0f4a6f9789738c05aff3bce54&profile_id=164&oauth2_token_id=57447761"
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-100"
+            className="w-full h-full object-cover opacity-80"
             onError={(e) => {
               console.error("Video failed to load:", e);
             }}
