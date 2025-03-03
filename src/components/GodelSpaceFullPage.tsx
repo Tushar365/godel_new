@@ -1,6 +1,7 @@
 // component/GodelSpaceFullPage.tsx
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import Partners from './Partners';
 import ContactForm from './ContactForm';
 
@@ -12,9 +13,11 @@ const GodelSpaceFullPage = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <div className="bg-gray-900 p-4 rounded-lg">
-              <img 
+              <Image 
                 src="/Blog_Overview-Saudi-Arabia.gif" 
                 alt="Aerial view of port" 
+                width={600}
+                height={400}
                 className="w-full rounded"
               />
             </div>
@@ -67,9 +70,11 @@ const GodelSpaceFullPage = () => {
           </div>
           <div className="md:w-1/2">
             <div className="bg-gray-800 p-4 rounded-lg">
-              <img 
+              <Image 
                 src="/French_Riviera_node_full_image_2.jpg" 
                 alt="Satellite imagery of coastline" 
+                width={600}
+                height={400}
                 className="w-full rounded"
               />
             </div>
@@ -82,9 +87,11 @@ const GodelSpaceFullPage = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <div className="bg-gray-900 p-4 rounded-lg">
-              <img 
+              <Image 
                 src="/GEO-2019-6144.jpg" 
                 alt="Space debris visualization" 
+                width={600}
+                height={400}
                 className="w-full rounded"
               />
             </div>
@@ -92,7 +99,7 @@ const GodelSpaceFullPage = () => {
           <div className="md:w-1/2">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">AI-Powered Space Debris Intelligence</h2>
             <p className="text-sm md:text-base mb-6">
-              Godel Space's AI-driven technology enables deep understanding of space debris, identifying risks and optimizing collision avoidance maneuvers.
+              Godel Space&apos;s AI-driven technology enables deep understanding of space debris, identifying risks and optimizing collision avoidance maneuvers.
             </p>
             <ul className="space-y-3">
               <li className="flex items-start">

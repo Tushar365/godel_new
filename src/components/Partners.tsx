@@ -1,6 +1,6 @@
-
 // src/components/Partners.tsx
 import React from 'react';
+import Image from 'next/image';
 
 const Partners = () => {
   return (
@@ -9,9 +9,11 @@ const Partners = () => {
         <h2 className="text-2xl md:text-3xl font-bold mb-12">Our Partners And Supporters</h2>
         <div className="flex flex-wrap justify-center gap-8">
           <div className="w-32">
-            <img 
+            <Image 
               src="/NVIDIA_Inception_Program_pillars.jpg" 
               alt="NVIDIA logo" 
+              width={128}
+              height={128}
               className="w-full"
             />
           </div>
