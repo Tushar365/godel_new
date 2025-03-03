@@ -12,7 +12,7 @@ A Next.js-based web application showcasing AI-powered geospatial insights.
 
 ### Installation
 
-1. Clone the repository to your local machine or fork it on Replit.
+1. Clone the repository to your local machine 
 
 2. Install dependencies:
 ```bash
@@ -26,7 +26,7 @@ Run the development server with:
 npm run dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000) or the URL provided by Replit.
+The application will be available at [http://localhost:3000](http://localhost:3000) .
 
 ### Build for Production
 
