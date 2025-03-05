@@ -1,0 +1,46 @@
+.footer {
+    
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 1000; /* Ensure footer stays above other content */
+    backdrop-filter: blur(10px); /* Optional: Adds glass effect */
+  }
+  
+  /* Add responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+  }
+  
+  .contactInfo {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .companyInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tagline {
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
