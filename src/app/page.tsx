@@ -1,13 +1,35 @@
-// app/page.tsx
-import React from 'react';
-import GodelSpaceFullPage from '@/components/GodelSpaceFullPage';
-import Hero from '@/components/hero'; // Assuming hero.tsx is in the components folder and named hero
+'use client';
+
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import { ErrorBoundary } from 'react-error-boundary';
+
+// Dynamic imports with lazy loading
+const Hero = dynamic(() => import('@/components/page_content/hero'), {
+  loading: () => <div>Loading hero...</div>
+});
+
+const GodelSpaceFullPage = dynamic(() => import('@/components/GodelSpaceFullPage'), {
+  loading: () => <div>Loading content...</div>
+});
+
+// Fallback component for error handling
+const ErrorFallback = ({ error }: { error: Error }) => (
+  <div role="alert" className="error-fallback">
+    <p>Something went wrong:</p>
+    <pre style={{ color: 'red' }}>{error.message}</pre>
+  </div>
+);
 
 export default function Home() {
   return (
-    <div> {/* Or a more semantic container like <main> if needed */}
-      <Hero />
-      <GodelSpaceFullPage />
-    </div>
+    <main className="min-h-screen flex flex-col">
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<div>Loading page...</div>}>
+          <Hero />
+          <GodelSpaceFullPage />
+        </Suspense>
+      </ErrorBoundary>
+    </main>
   );
 }

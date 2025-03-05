@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "convex": "^1.19.2",
+    "framer-motion": "^12.4.10",
     "next": "15.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
