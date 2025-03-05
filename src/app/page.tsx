@@ -13,6 +13,10 @@ const GodelSpaceFullPage = dynamic(() => import('@/components/GodelSpaceFullPage
   loading: () => <div>Loading content...</div>
 });
 
+const Footer = dynamic(() => import('@/components/Footer/footer'), {
+  loading: () => <div>Loading content...</div>
+});
+
 // Fallback component for error handling
 const ErrorFallback = ({ error }: { error: Error }) => (
   <div role="alert" className="error-fallback">
@@ -28,6 +32,7 @@ export default function Home() {
         <Suspense fallback={<div>Loading page...</div>}>
           <Hero />
           <GodelSpaceFullPage />
+          <Footer />
         </Suspense>
       </ErrorBoundary>
     </main>
