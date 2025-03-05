@@ -48,14 +48,14 @@
   margin-right: 1rem; /* Moves menu slightly right */
 }
 
-.navLink {
+/* .navLink {
   color: #faf6f6;
   text-decoration: none;
   font-weight: 400;
   position: relative;
   transition: all 0.3s ease;
   padding: 0.5rem 0;
-}
+} */
 
 .navLink:hover {
   color: #2563eb; /* Tailwind blue-600 */
