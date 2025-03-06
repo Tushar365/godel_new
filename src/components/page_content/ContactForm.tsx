@@ -8,6 +8,10 @@ const ContactForm = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const GOOGLE_SHEETS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzsfDLWM_DsD7ncpu89mauyRtpBKyEHUgE_aeURwos1lFDNF8Hi5bGC0ZxGc6Wo-zAF/exec';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -17,10 +21,45 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Add form submission logic
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Explicitly tell ESLint we know the response isn't used
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _ = await fetch(GOOGLE_SHEETS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Google Apps Script requires no-cors
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+
+      // Since it's no-cors, we can't read the response directly
+      setSubmitStatus('success');
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -92,6 +131,18 @@ const ContactForm = () => {
           Connect with us to explore innovative space technology and solutions.
         </motion.p>
 
+        {submitStatus === 'success' && (
+          <div className="bg-green-600 text-white p-4 rounded mb-4">
+            Thank you for your message! We&apos;ll get back to you soon.
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="bg-red-600 text-white p-4 rounded mb-4">
+            Oops! There was a problem submitting your form. Please try again.
+          </div>
+        )}
+
         <motion.form 
           className="space-y-4" 
           onSubmit={handleSubmit}
@@ -107,6 +158,7 @@ const ContactForm = () => {
               onChange={handleChange}
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white"
               required
+              disabled={isSubmitting}
             />
           </motion.div>
 
@@ -120,6 +172,7 @@ const ContactForm = () => {
               onChange={handleChange}
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white"
               required
+              disabled={isSubmitting}
             />
           </motion.div>
 
@@ -133,6 +186,7 @@ const ContactForm = () => {
               onChange={handleChange}
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white"
               required
+              disabled={isSubmitting}
             />
           </motion.div>
 
@@ -146,15 +200,17 @@ const ContactForm = () => {
               onChange={handleChange}
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white"
               required
+              disabled={isSubmitting}
             />
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-8 rounded transition duration-300 hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-8 rounded transition duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isSubmitting}
             >
-              Submit your inquiry
+              {isSubmitting ? 'Submitting...' : 'Submit your inquiry'}
             </button>
           </motion.div>
         </motion.form>
