@@ -3,8 +3,7 @@ import path from 'path';
 import fs from 'fs';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const filePath = path.join(process.cwd(), 'public/documents/capabilitystatement.pdf');
-  
+  const filePath = path.join(process.cwd(), 'public/documents/Godel-Space Capability Statement.pdf');
   // Check if file exists
   if (fs.existsSync(filePath)) {
     // Set headers
