@@ -1,6 +1,6 @@
 // ... existing code ...
 
-<a href="/documents/Godel-Space Capability Statement.pdf" download>
+<a href="/documents/Godel-SpaceCapabilityStatement.pdf" download>
   Download Capability Statement
 </a>
 
