@@ -5,7 +5,7 @@ import React from 'react';
 import Partners from './page_content/Partners';
 import ContactForm from './page_content/ContactForm';
 import MiddleSlides from './page_content/MiddleSlides';
-
+import InteractiveTimeline from './page_content/InteractiveTimeline';
 
 const GodelSpaceFullPage = () => {
   return (
@@ -14,6 +14,11 @@ const GodelSpaceFullPage = () => {
       {/* Middle Slides Section */}
       <section className="w-full">
         <MiddleSlides />
+      </section>
+
+      {/* Interactive Timeline Section */}
+      <section className="w-full">
+        <InteractiveTimeline />
       </section>
 
       {/* Partners Section */}
